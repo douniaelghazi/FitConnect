@@ -90,4 +90,24 @@ class AdherentRepository
 
         return $stmt->execute([$id]);
     }
+
+    public function hasAbonnement(int $id): bool
+    {
+        $sql = "SELECT COUNT(*) FROM abonnement WHERE id_adherent = ?";
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([$id]);
+
+        return $stmt->fetchColumn() > 0;
+    }
+
+    public function hasSeance(int $id): bool
+    {
+        $sql = "SELECT COUNT(*) FROM seance WHERE id_adherent = ?";
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([$id]);
+
+        return $stmt->fetchColumn() > 0;
+    }
 }

@@ -59,4 +59,14 @@ class AdherentService
     {
         return $this->adherentRepository->delete($id);
     }
+
+    public function hasAbonnement(int $id): bool
+    {
+        return $this->adherentRepository->hasAbonnement($id);
+    }
+
+    public function hasSeance(int $id): bool
+    {
+        return $this->adherentRepository->hasSeance($id);
+    }
 }

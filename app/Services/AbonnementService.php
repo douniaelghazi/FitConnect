@@ -42,6 +42,29 @@ class AbonnementService
         );
     }
 
+    public function update(
+        int $id,
+        string $type_abonnement,
+        string $date_debut,
+        string $date_fin,
+        int $id_adherent
+    ): bool {
+
+        if ($date_fin <= $date_debut) {
+            throw new Exception(
+                "La date de fin doit être supérieure à la date de début."
+            );
+        }
+
+        return $this->abonnementRepository->update(
+            $id,
+            $type_abonnement,
+            $date_debut,
+            $date_fin,
+            $id_adherent
+        );
+    }
+
     public function delete(int $id): bool
     {
         return $this->abonnementRepository->delete($id);

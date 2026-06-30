@@ -7,24 +7,52 @@ require_once '../app/Controllers/AbonnementController.php';
 
 $page = $_GET['page'] ?? 'dashboard';
 
-switch($page)
+switch ($page)
 {
-    case 'adherents':
-        (new AdherentController())->index();
+    // Dashboard
+    default:
+        require '../views/dashboard/index.php';
         break;
 
-    case 'abonnements':
-        (new AbonnementController())->index();
+    // Adhérents
+    case 'adherents':
+        (new AdherentController())->index();
         break;
 
     case 'create-adherent':
         (new AdherentController())->create();
         break;
 
+    case 'edit-adherent':
+        (new AdherentController())->edit();
+        break;
+
+    case 'update-adherent':
+        (new AdherentController())->update();
+        break;
+
+    case 'delete-adherent':
+        (new AdherentController())->delete();
+        break;
+
+    // Abonnements
+    case 'abonnements':
+        (new AbonnementController())->index();
+        break;
+
     case 'create-abonnement':
         (new AbonnementController())->create();
         break;
 
-    default:
-        require '../views/dashboard/index.php';
+    case 'edit-abonnement':
+        (new AbonnementController())->edit();
+        break;
+
+    case 'update-abonnement':
+        (new AbonnementController())->update();
+        break;
+
+    case 'delete-abonnement':
+        (new AbonnementController())->delete();
+        break;
 }
