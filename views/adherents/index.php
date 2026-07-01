@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
-    <title>Liste des adhérents</title>
+    <title>Adhérents</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<a href="?page=create-adherent">Ajouter un adhérent</a>
+<nav>
+    <h2>FitConnect</h2>
+
+    <ul>
+        <li><a href="index.php">Dashboard</a></li>
+        <li><a href="index.php?page=adherents">Adhérents</a></li>
+        <li><a href="index.php?page=abonnements">Abonnements</a></li>
+    </ul>
+</nav>
+
+<div class="container">
 
 <h2>Liste des adhérents</h2>
+
+<a class="btn" href="index.php?page=create-adherent">
+    Ajouter un adhérent
+</a>
 
 <table>
 
@@ -18,7 +34,6 @@
     <th>Nom</th>
     <th>Prénom</th>
     <th>Email</th>
-    <th>Téléphone</th>
     <th>Actions</th>
 </tr>
 
@@ -29,23 +44,27 @@
     <td><?= $adherent['nom'] ?></td>
     <td><?= $adherent['prenom'] ?></td>
     <td><?= $adherent['email'] ?></td>
-    <td><?= $adherent['telephone'] ?></td>
 
     <td>
-        <a href="?page=edit-adherent&id=<?= $adherent['id_adherent'] ?>">
+        <a class="btn-edit"
+           href="index.php?page=edit-adherent&id=<?= $adherent['id_adherent'] ?>">
             Modifier
         </a>
 
-        <a href="?page=delete-adherent&id=<?= $adherent['id_adherent'] ?>"
-           onclick="return confirm('Supprimer cet adhérent ?')">
+        <a class="btn-delete"
+           href="index.php?page=delete-adherent&id=<?= $adherent['id_adherent'] ?>"
+           onclick="return confirm('Voulez-vous supprimer cet adhérent ?')">
             Supprimer
         </a>
     </td>
+
 </tr>
 
 <?php endforeach; ?>
 
 </table>
+
+</div>
 
 </body>
 </html>
