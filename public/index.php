@@ -4,17 +4,24 @@ require_once '../config/Database.php';
 
 require_once '../app/Controllers/AdherentController.php';
 require_once '../app/Controllers/AbonnementController.php';
+require_once '../app/Controllers/SeanceController.php';
 
 $page = $_GET['page'] ?? 'dashboard';
 
 switch ($page)
 {
-    // Dashboard
-    default:
+    /* ===========================
+       Dashboard
+    ============================ */
+
+    case 'dashboard':
         require '../views/dashboard/index.php';
         break;
 
-    // Adhérents
+    /* ===========================
+       Adhérents
+    ============================ */
+
     case 'adherents':
         (new AdherentController())->index();
         break;
@@ -35,7 +42,10 @@ switch ($page)
         (new AdherentController())->delete();
         break;
 
-    // Abonnements
+    /* ===========================
+       Abonnements
+    ============================ */
+
     case 'abonnements':
         (new AbonnementController())->index();
         break;
@@ -54,5 +64,37 @@ switch ($page)
 
     case 'delete-abonnement':
         (new AbonnementController())->delete();
+        break;
+
+    /* ===========================
+       Séances
+    ============================ */
+
+    case 'seances':
+        (new SeanceController())->index();
+        break;
+
+    case 'create-seance':
+        (new SeanceController())->create();
+        break;
+
+    case 'edit-seance':
+        (new SeanceController())->edit();
+        break;
+
+    case 'update-seance':
+        (new SeanceController())->update();
+        break;
+
+    case 'delete-seance':
+        (new SeanceController())->delete();
+        break;
+
+    /* ===========================
+       Default
+    ============================ */
+
+    default:
+        require '../views/dashboard/index.php';
         break;
 }

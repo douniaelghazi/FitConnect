@@ -18,18 +18,17 @@ class SeanceRepository
         $stmt = $this->db->prepare($sql);
         $stmt->execute();
 
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function findById(int $id): array|false
     {
-        $sql = "SELECT * FROM seance
-                WHERE id_seance = ?";
+        $sql = "SELECT * FROM seance WHERE id_seance = ?";
 
         $stmt = $this->db->prepare($sql);
         $stmt->execute([$id]);
 
-        return $stmt->fetch();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     public function create(
@@ -42,8 +41,8 @@ class SeanceRepository
     ): bool {
 
         $sql = "INSERT INTO seance
-                (date_seance, duree, activite, equipement, id_adherent, id_salle)
-                VALUES (?, ?, ?, ?, ?, ?)";
+        (date_seance,duree,activite,equipement,id_adherent,id_salle)
+        VALUES(?,?,?,?,?,?)";
 
         $stmt = $this->db->prepare($sql);
 
@@ -68,13 +67,14 @@ class SeanceRepository
     ): bool {
 
         $sql = "UPDATE seance
-                SET date_seance = ?,
-                    duree = ?,
-                    activite = ?,
-                    equipement = ?,
-                    id_adherent = ?,
-                    id_salle = ?
-                WHERE id_seance = ?";
+                SET
+                date_seance=?,
+                duree=?,
+                activite=?,
+                equipement=?,
+                id_adherent=?,
+                id_salle=?
+                WHERE id_seance=?";
 
         $stmt = $this->db->prepare($sql);
 
@@ -91,8 +91,7 @@ class SeanceRepository
 
     public function delete(int $id): bool
     {
-        $sql = "DELETE FROM seance
-                WHERE id_seance = ?";
+        $sql = "DELETE FROM seance WHERE id_seance=?";
 
         $stmt = $this->db->prepare($sql);
 

@@ -19,6 +19,11 @@ class SeanceService
         return $this->seanceRepository->findAll();
     }
 
+    public function getById(int $id): array|false
+    {
+        return $this->seanceRepository->findById($id);
+    }
+
     public function create(
         string $date_seance,
         int $duree,
@@ -44,12 +49,31 @@ class SeanceService
         }
 
         if (!$valide) {
-            throw new Exception(
-                "L'adhérent ne possède pas d'abonnement valide."
-            );
+            throw new Exception("L'adhérent ne possède pas d'abonnement valide.");
         }
 
         return $this->seanceRepository->create(
+            $date_seance,
+            $duree,
+            $activite,
+            $equipement,
+            $id_adherent,
+            $id_salle
+        );
+    }
+
+    public function update(
+        int $id,
+        string $date_seance,
+        int $duree,
+        string $activite,
+        ?string $equipement,
+        int $id_adherent,
+        int $id_salle
+    ): bool {
+
+        return $this->seanceRepository->update(
+            $id,
             $date_seance,
             $duree,
             $activite,

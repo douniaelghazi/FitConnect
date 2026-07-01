@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Modifier un adhérent</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+
+<div class="container">
 
 <h2>Modifier un adhérent</h2>
 
@@ -57,6 +61,14 @@
     </button>
 
 </form>
+
+<br>
+
+<a class="btn" href="index.php?page=adherents">
+    Retour
+</a>
+
+</div>
 
 </body>
 </html>

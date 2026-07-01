@@ -10,8 +10,8 @@
 }
 
 body{
-    background:#f5f5f5;
-    color:#333;
+    background:#F8FAFC;
+    color:#1E293B;
 }
 
 /* ==========================
@@ -19,12 +19,12 @@ body{
 ========================== */
 
 nav{
-    background:#0d6efd;
+    background:#334155;
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:18px 40px;
-    box-shadow:0 2px 10px rgba(0,0,0,.15);
+    box-shadow:0 2px 10px rgba(0,0,0,.10);
 }
 
 nav h2{
@@ -47,7 +47,7 @@ nav ul li a{
 }
 
 nav ul li a:hover{
-    color:#dbeafe;
+    color:#CBD5E1;
 }
 
 /* ==========================
@@ -75,7 +75,7 @@ h2{
 
 p{
     font-size:20px;
-    color:#555;
+    color:#64748B;
     margin-bottom:30px;
 }
 
@@ -85,7 +85,7 @@ p{
 
 .btn{
     display:inline-block;
-    background:#198754;
+    background:#10B981;
     color:white;
     text-decoration:none;
     padding:12px 22px;
@@ -97,7 +97,7 @@ p{
 }
 
 .btn:hover{
-    background:#157347;
+    background:#059669;
     transform:translateY(-2px);
 }
 
@@ -111,11 +111,11 @@ table{
     background:white;
     border-radius:10px;
     overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,.12);
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
 table th{
-    background:#0d6efd;
+    background:#475569;
     color:white;
     padding:15px;
     font-size:18px;
@@ -123,17 +123,17 @@ table th{
 
 table td{
     padding:15px;
-    border:1px solid #ddd;
+    border:1px solid #E2E8F0;
     text-align:center;
     font-size:17px;
 }
 
 table tr:nth-child(even){
-    background:#f8f9fa;
+    background:#F8FAFC;
 }
 
 table tr:hover{
-    background:#eef4ff;
+    background:#F1F5F9;
 }
 
 /* ==========================
@@ -145,7 +145,7 @@ form{
     background:white;
     padding:30px;
     border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
 
 input,
@@ -153,7 +153,7 @@ select{
     width:100%;
     padding:12px;
     margin-bottom:18px;
-    border:1px solid #ccc;
+    border:1px solid #CBD5E1;
     border-radius:5px;
     font-size:16px;
 }
@@ -161,7 +161,7 @@ select{
 input:focus,
 select:focus{
     outline:none;
-    border-color:#0d6efd;
+    border-color:#64748B;
 }
 
 button{
@@ -169,7 +169,7 @@ button{
     padding:12px;
     border:none;
     border-radius:5px;
-    background:#198754;
+    background:#10B981;
     color:white;
     font-size:17px;
     cursor:pointer;
@@ -177,7 +177,7 @@ button{
 }
 
 button:hover{
-    background:#157347;
+    background:#059669;
 }
 
 /* ==========================
@@ -186,7 +186,7 @@ button:hover{
 
 .btn-edit{
     display:inline-block;
-    background:#f59e0b;
+    background:#a97417;
     color:white;
     text-decoration:none;
     padding:8px 14px;
@@ -196,12 +196,12 @@ button:hover{
 }
 
 .btn-edit:hover{
-    background:#d97706;
+    background:#6e400c;
 }
 
 .btn-delete{
     display:inline-block;
-    background:#dc3545;
+    background:#EF4444;
     color:white;
     text-decoration:none;
     padding:8px 14px;
@@ -210,5 +210,69 @@ button:hover{
 }
 
 .btn-delete:hover{
-    background:#bb2d3b;
+    background:#DC2626;
+}
+
+/* ==========================
+        DASHBOARD
+========================== */
+
+.cards{
+    display:flex;
+    gap:25px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:#FFFFFF;
+    width:300px;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#334155;
+}
+
+.card p{
+    margin-bottom:20px;
+    color:#64748B;
+    font-size:17px;
+}
+
+form{
+    background:#fff;
+    width:500px;
+    margin:30px auto;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+input,
+select{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #CBD5E1;
+    border-radius:5px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#10B981;
+    color:#fff;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#059669;
 }

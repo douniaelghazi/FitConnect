@@ -16,6 +16,7 @@
         <li><a href="index.php">Dashboard</a></li>
         <li><a href="index.php?page=adherents">Adhérents</a></li>
         <li><a href="index.php?page=abonnements">Abonnements</a></li>
+        <li><a href="index.php?page=seances">Séances</a></li>
     </ul>
 </nav>
 
@@ -24,19 +25,40 @@
     <h1>Bienvenue sur FitConnect</h1>
 
     <p>
-        Gérez facilement les adhérents et les abonnements des salles de sport
-        grâce à cette application.
+        Gérez facilement les adhérents, les abonnements et les séances
+        de votre salle de sport.
     </p>
 
-    <br>
+    <div class="cards">
 
-    <a class="btn" href="index.php?page=adherents">
-        Gérer les adhérents
-    </a>
+        <div class="card">
+            <h3>👤 Adhérents</h3>
+            <p>Gestion des adhérents inscrits.</p>
 
-    <a class="btn" href="index.php?page=abonnements">
-        Gérer les abonnements
-    </a>
+            <a class="btn" href="index.php?page=adherents">
+                Accéder
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>💳 Abonnements</h3>
+            <p>Gestion des abonnements.</p>
+
+            <a class="btn" href="index.php?page=abonnements">
+                Accéder
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>🏋️ Séances</h3>
+            <p>Gestion des séances de sport.</p>
+
+            <a class="btn" href="index.php?page=seances">
+                Accéder
+            </a>
+        </div>
+
+    </div>
 
 </div>
 
